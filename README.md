@@ -49,7 +49,7 @@ This program runs best on macOS or Solaris[1].
 PROBLEMS
 ========
 
-1) With only tri (jumpif), swap and not, there's no way to define a constant in #Logica, given the rules and its inital startup state of / /.  How do you get a 0 bit in E?
+1) With only tri (skipwhen), swap and not, there's no way to define a constant in #Logica, given the rules and its inital startup state of / /.  How do you get a 0 bit in E?
 
 --
 BusFactor1 Inc.
