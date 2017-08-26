@@ -55,3 +55,14 @@ http://busfactor1.ca/
 
 [1] Real UNIX based operating systems. The ones with Korn Shell by deafult.
 [2] Citation Needed.
+
+References
+==========
+
+MetaMaths! - Gregory Chaitin
+Exploring Randomness - Gregory Chaitin
+The Limits of Mathematics - Gregory Chaitin
+The Unknowable - Gregory Chaitin
+Proving Darwin - Gregory Chaitin
+Principia Mathematica - Russel and Whitehead
+Algorithms - various
