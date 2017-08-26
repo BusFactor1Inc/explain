@@ -49,7 +49,7 @@ This program runs best on macOS or Solaris[1].
 PROBLEMS
 ========
 
-1) With only tri (skipwhen), swap and not, there's no way to define a constant in #Logica, given the rules and its inital startup state of / /.  How do you get a 0 bit in E?
+1) With only tri (aka skipwhen), swap and not, there's no way to define a constant in #Logica, given the rules and its inital startup state of / /.  How do you get a 0 bit in E?
 
 --
 BusFactor1 Inc.
@@ -71,3 +71,6 @@ The Unknowable - Gregory Chaitin
 Proving Darwin - Gregory Chaitin
 Principia Mathematica - Russel and Whitehead
 Algorithms - various
+
+--
+This document is written in Clarity, but may contain bugs. WIP
