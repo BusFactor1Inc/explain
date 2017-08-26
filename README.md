@@ -6,7 +6,7 @@ A game of exploring space(s).  Language spaces. It is a game of 3 words and 3 bi
     $ explain 1/0 / tri
 ```
 
-This is the first word.  tri will take the contents of the E LOCATION and give it a random value of 1 or 0, aka 1/0.
+This is the first word.  tri will take the contents of the E LOCATION and give it a random value of 1 or 0 if it's contents were intiall /, aka 1/0.  The intial contents are alway /.
 
 From there you will prove sentances.  The words will follow and you will find the resulting values.  I mean, there's only 2 bits.  The machine resets itself after every invocation, and you restart every time you enter a sentance.  It's up to you to see how long a string of words you can make, and also, how little debugging output you can have.  That's the competition.  The longest with the least.  Easy right?
 
