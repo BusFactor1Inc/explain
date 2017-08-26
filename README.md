@@ -1,6 +1,6 @@
 # explain - explanation pending.
 
-A game of exploring space(s).  Language spaces. It is a game of 3 words and 3 bits (2x1.5).  You can swap the bits in E and I, which can take the normal values of 0 and 1, but also the values of / and 1/0.  The mystery continues in that you have to find paths, with words, that verify IN ALL CASES (IAC), but, it's up to you to verify that, probabilisically, your answer is correct.  That's because your only input is a RANDOM VALUE (RV), or a bit that can either be 1 or 0.  This is through the use of the first word, 'tri', as follows:
+A game of exploring space(s).  Language spaces. It is a game of 3 words and 2 BOPs[3].  You can swap the bits in E and I, which can take the normal values of 0 and 1, but also the values of / and 1/0.  The mystery continues in that you have to find paths, with words, that verify IN ALL CASES (IAC), but, it's up to you to verify that, probabilisically, your answer is correct.  That's because your only input is a RANDOM VALUE (RV), or a bit that can either be 1 or 0.  This is through the use of the first word, 'tri', as follows:
 
 ```sh
     $ explain 1/0 / tri
@@ -61,6 +61,8 @@ http://busfactor1.ca/
 
 [1] Real UNIX based operating systems. The ones with Korn Shell by deafult.
 [2] Citation Needed.
+
+[3] A BOP is a like a BIT, but with 3 states: 0, 1 and /.  / Represents the 'unknown' state. There is also a 4th state, one which is given to as a parameter to  'expect', of 1/0. This means you *expect* the result in the specified LOCATION (E or I) to be EITHER 1 OR 0 (E1O0) at the end of the TEST.
 
 References
 ==========
