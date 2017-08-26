@@ -39,7 +39,7 @@ I have defined the word 'meta', a higher level word, one which feeds data into '
       
   AUTHOR:
   
-      TBD
+      TMD Inc.
 ```
 
 See 'expect', in the top level of the repsitory.  Check it's history for more explanation.
