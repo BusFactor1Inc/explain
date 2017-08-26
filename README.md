@@ -50,6 +50,7 @@ PROBLEMS
 ========
 
 1) With only tri (aka skipwhen), swap and not, there's no way to define a constant in #Logica, given the rules and its inital startup state of / /.  How do you get a 0 bit in E?
+2) How would you define π in #Logica?  As a constant, or a computed value?  Which do you think would produce a shorter program?  Would there even be a difference between a 'constant' or 'computed' value on this machine?  What is the difference?
 
 --
 BusFactor1 Inc.
