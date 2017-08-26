@@ -8,7 +8,7 @@ A game of exploring space(s).  Language spaces. It is a game of 3 words and 3 bi
 
 This is the first word.  tri will take the contents of the E LOCATION and give it a random value of 1 or 0 if it's contents were intiall /, aka 1/0.  The intial contents are always / at the start of *every run*, so you always get a fresh start with every sentence.
 
-From there you will prove sentances.  The words will follow and you will find the resulting values.  I mean, there's only 2 bits.  The machine resets itself after every invocation, and you restart every time you enter a sentance.  It's up to you to see how long a string of words you can make, and also, how little debugging output you can have.  That's the competition.  The longest with the least.  Easy right?
+From there you will prove sentances.  The words will follow and you will find the resulting values.  I mean, there's only 2 bits, it can't be that hard to figure them out, right?   It's up to you to see how long a string of words you can make, and also, how little debugging output you can have and if you get a 'pass' at the end.  That's the competition.  The longest amount of words with the least output.  Hopefully, the sentences might even do something useful (someday).
 
 This is really a game about metaprogramming.  You will not, for long, want to program in the base #Logica itself.  You will want to design a META PROGRAMMING (MP) system, one whic will GENERATE YOUR CODE (GYC) for you. This because, with so few words (although it's Turing Complete[2]), writing it by itself, I think, will get boring quite quickly.
 
