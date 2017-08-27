@@ -1,4 +1,4 @@
-# explain - ([explanation pending](http://github.com/BusFactor1Inc/explain)).
+# explain - ([explanation pending](http://github.com/BusFactor1Inc/index.html)).
 
 A game of exploring space(s).  Language spaces. It is a game of 3
 words and 2 BOPs[3].  You can swch the bits in E and I, which can take
