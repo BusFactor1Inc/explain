@@ -35,8 +35,9 @@ for you. This because, with so few words (although it's Turing
 Complete[2]), writing it by itself, I think, will get boring quite
 quickly.
 
-I have defined the word 'meta', a higher level word, one which feeds
-data into 'explain':
+I have defined the word '[meta](https://github.com/BusFactor1Inc/explain/blob/master/meta)', 
+a higher level word, one which feeds data into 
+'[explain](https://github.com/BusFactor1Inc/explain/blob/master/explain)':
 
 ```
     meta is the next word after tri, swch and not
@@ -67,7 +68,8 @@ data into 'explain':
       TMD Inc.
 ```
 
-See 'expect', in the top level of the repsitory.  Check it's history
+See '[expect](https://github.com/BusFactor1Inc/explain/blob/master/expect)', 
+in the top level of the repsitory.  Check it's history
 for more explanation.
 
 This program runs best on macOS or Solaris[1]. 
