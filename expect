@@ -27,13 +27,13 @@ function tri {
     echo $x | tee ifax x
 }
 
-function swap {
+function swch {
 # exchange locations
     x=$(<x)
     i=$(<i)
-    debug swap x: $x i: $i
-    echo $i | tee swapx x
-    echo $x | tee swapi i
+    debug swch x: $x i: $i
+    echo $i | tee swchx x
+    echo $x | tee swchi i
 }
 
 function not {
