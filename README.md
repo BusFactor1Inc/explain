@@ -91,10 +91,10 @@ there even be a difference between a 'constant' or 'computed' value on
 this machine?  What is the difference?
 
 --
-BusFactor1 Inc.
 Burton Samograd
 root@busfactor1.ca
 http://busfactor1.ca/
+
 2017
 
 [1] Real UNIX based operating systems. The ones with Korn Shell by deafult.
@@ -107,11 +107,17 @@ References
 ==========
 
 MetaMaths! - Gregory Chaitin
+
 Exploring Randomness - Gregory Chaitin
+
 The Limits of Mathematics - Gregory Chaitin
+
 The Unknowable - Gregory Chaitin
+
 Proving Darwin - Gregory Chaitin
+
 Principia Mathematica - Russel and Whitehead
+
 Algorithms - various
 
 --
