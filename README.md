@@ -14,7 +14,7 @@ This is through the use of the first word, 'tri', as follows:
 ```
 
 This is the first word.  tri will take the contents of the E LOCATION
-and give it a random value of 1 or 0 if it's contents were intiall /,
+and give it a random value of 1 or 0 if it's contents were intially /,
 aka 1/0.  The intial contents are always / at the start of *every
 run*, so you always get a fresh start with every sentence.
 
@@ -30,7 +30,7 @@ output.  Hopefully, the sentences might even do something useful
 
 This is really a game about metaprogramming.  You will not, for long,
 want to program in the base #Logica itself.  You will want to design a
-META PROGRAMMING (MP) system, one whic will GENERATE YOUR CODE (GYC)
+META PROGRAMMING (MP) system, one which will GENERATE YOUR CODE (GYC)
 for you. This because, with so few words (although it's Turing
 Complete[2]), writing it by itself, I think, will get boring quite
 quickly.
@@ -50,7 +50,7 @@ a higher level word, one which feeds data into
       
       <explaination> is a string of words.
       
-    SUMMARY:
+   SUMMARY:
       
       meta will define a word as an explanation.
       
@@ -59,11 +59,15 @@ a higher level word, one which feeds data into
       
       that's it.
       
+   EXAMPLES:
+      
+      $ meta newword tri not swap   
+      
    BUGS:
    
       I hope not.
       
-  AUTHOR:
+   AUTHOR:
   
       TMD Inc.
 ```
