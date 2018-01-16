@@ -1,0 +1,84 @@
+#!/bin/ksh
+#
+# meta - a meta-processor
+#
+# Meta will allow you define words with definitions,
+# if which when encounted again on input, will be expanded
+# to their definitions, or passed through if there is
+# none.
+#
+# Usage: meta [command]
+#
+# Example:
+#
+#	$ echo 0 0 tri | ./meta ./expect
+#	echo 0 0 tri | ./meta ./expect
+#	# Metafile: Defining 'a' as 'tri not swap'.
+#	# Words:  0 0 tri
+#	doit $* 0 0 tri
+#	# tri
+#	tri x: /
+#	trix 1
+#	doit x: 1 i: / (expected x: 0 i: 0)
+#	no
+#
+#
+# Interactive Example:
+#
+#	$ ./meta ./expect
+#	# Metafile: Defining 'a' as 'tri not swap'.
+#	meta[expect]> b tri not mov
+#	b tri not mov
+#	# Words:  b tri not mov
+#	doit $* b tri not mov
+#	# not mov
+#	not x: /
+#	notx 1
+#	mov x: 1 i: /
+#	movx 1
+#	doit x: 1 i: 1 (expected x: b i: tri)
+#	no
+#	meta[expect]>
+#
+# Example Metafile:
+#
+# a tri not swap
+# b tri not mov
+#
+# Burton Samograd
+# 2018
+
+pipeto=$1
+
+typeset -A table
+
+if [[ -e Metafile ]]; then
+    while read word definition; do
+	table[$word]=$definition
+	echo "# Metafile: Defining '$word' as '$definition'."
+    done < Metafile
+fi
+
+while read first?"meta[$(basename $pipeto)]> " line; do
+    words=
+    if [[ $first == "meta" ]]; then
+	echo $line | while read word definition; do
+	    echo "# Defining '$word' as '$definition'."
+	    table[$word]=$definition
+	done
+	continue
+    else
+	word=
+	for word in $first $line; do
+	    if [[ ! -z ${table[$word]} ]]; then
+		echo "# Using: '$word' as '${table[$word]}'"
+		words="$words ${table[$word]}"
+	    else
+		words="$words $word";
+	    fi
+	done
+    fi
+    echo "# Words: $words"
+    ./$pipeto $words
+done
+
