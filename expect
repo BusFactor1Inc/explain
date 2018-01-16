@@ -2,12 +2,32 @@
 DEBUG=t
 # expect - test your expectations
 #
+# Usage: expect <x result> <i result> <program...>
+#
+# Example:
+#
+#	expect ? ? tri mov
+#
+# Values:
+#
+#	/ - initial value
+#	0 - a value
+#	1 - a value
+#	? - either 1 or 0
+#
+# Ops:
+#	tri
+#	not
+#	mov
+#	swap
+#
 # BusFactor1 Inc.
 # 2017
 # License: AGPL
+
 set +k
 
-tee () {
+tee2 () {
     echo -n "$1 "
     /usr/bin/tee $2
 }
@@ -15,7 +35,7 @@ tee () {
 function tri { 
 # execute the next word if x is 1
     x=$(<x)
-    debug ifa x: $x
+    debug tri x: $x
     if [[ $x == / ]]; then
 	x=$((RANDOM%2))
 	$* # run WITH the random
@@ -24,16 +44,7 @@ function tri {
 	    $*
 	fi
     fi
-    echo $x | tee ifax x
-}
-
-function swch {
-# exchange locations
-    x=$(<x)
-    i=$(<i)
-    debug swch x: $x i: $i
-    echo $i | tee swchx x
-    echo $x | tee swchi i
+    echo $x | tee2 trix x
 }
 
 function not {
@@ -47,9 +58,25 @@ function not {
 	    echo 0
 	fi
     else
-	echo $((RANDOM%2))
-    fi | tee notx x
-    $*
+	echo $((RANDOM % 2))
+    fi | tee2 notx x
+}
+
+function mov {
+# move x to i
+    x=$(<x)
+    i=$(<i)
+    debug mov x: $x i: $i
+    echo $x | tee2 movx i
+}
+
+function swap {
+# exchange locations
+    x=$(<x)
+    i=$(<i)
+    debug swap x: $x i: $i
+    echo $i | tee2 swapx x
+    echo $x | tee2 swapi i
 }
 
 # ================================================================================
@@ -57,60 +84,52 @@ function debug { [[ $DEBUG = t ]] && echo $*; }
 
 function doit {
     debug doit '$*' $*
-    a=$1;shift
-    b=$1;shift
-    
-    $*
+    xf=$1;shift
+    if=$1;shift
+
+    echo \# $*
+    for op in $*; do
+    	$op
+    done
     
     x=$(<x)
     i=$(<i)
     
-    debug doit x: $x i: $i a: $a b: $b
-    
-    if [[ $x == $a ]]; then
-	if [[ $i == $b ]]; then
-	    exit 0
-	fi
-    else
-	exit 1
+    debug doit "x: $x i: $i (expected x: $xf i: $if)"
+
+    retval=0
+    if [[ $xf = 1/0 ]]; then
+	retval=1
+    elif [[ $xf = $x ]]; then
+	retval=1
     fi
+
+    if [[ $if = 1/0 ]]; then
+	retval=$((retval && 1))
+    elif [[ $if = $i ]]; then
+	retval=$((retval && 1))
+    fi
+
+    if [[ $retval == 0 ]]; then
+	echo no; exit 1;
+    else
+	echo yes; exit 0;
+    fi
+	
 }
 
 #onewordprograms () { for i in $ops; do echo $i; done; }
 #twowordprograms () { for j in $ops;  do for i in $ops; do echo $i $j; done; done; }
 #threewordprograms () { for k in $ops; do for j in $ops;  do for
 
+echo / > x
+echo / > i
+
 typeset nx=$1; # save the first argument in Next X (nx)
 typeset ni=$2; # save the second argument in Next I (ni)
 
-debug main $nx $ni
-
 doit $*; reset
-pass=$?
-
-if [[ $nx == 1/0 ]]; then
-    i=$(<i)
-    if [[ $i == $ni ]]; then
-	echo exit 0
-    else
-	echo exit 1
-    fi
-elif [[ $ni == 1/0 ]]; then
-    x=$(<x)
-    if [[ $x == $nx ]]; then
-	echo exit 0;
-	
-    else
-	echo exit 1;
-    fi
-elif [[ $x == $nx ]]; then
-    if [[ $i == $ni ]]; then
-	exit 0;
-    fi
-fi
-
-exit $pass
-
+exit
 --
 Burton Samograd
 2017
