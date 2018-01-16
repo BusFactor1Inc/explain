@@ -81,7 +81,7 @@ This program runs best on macOS or Solaris[1].
 PROBLEMS
 ========
 
-1) With only tri (aka skipwhen), swch and not, there's no way to
+1) With only tri (aka skipwhen), not, swap and mov there's no way to
 define a constant in #Logica, given the rules and its inital startup
 state of / /.  How do you get a 0 bit in E?
 
@@ -98,6 +98,7 @@ http://busfactor1.ca/
 2017
 
 [1] Real UNIX based operating systems. The ones with Korn Shell by deafult.
+
 [2] Citation Needed.
 
 [3] A BOP is a like a BIT, but with 3 states: 0, 1 and /.  / Represents the 'unknown' state. There is also a 4th state, one which is given to as a parameter to  'expect', of 1/0. This means you *expect* the result in the specified LOCATION (E or I) to be EITHER 1 OR 0 (E1O0) at the end of the TEST.
