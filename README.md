@@ -1,6 +1,6 @@
 # explain - ([explanation pending](https://raw.githubusercontent.com/BusFactor1Inc/explain/master/index.html)).
 
-A game of exploring space(s).  Language spaces. It is a game of 3
+A game of exploring space(s).  Language spaces. It is a game of 4
 words and 2 BOPs[3].  You can swch the bits in E and I, which can take
 the normal values of 0 and 1, but also the values of / and 1/0.  The
 mystery continues in that you have to find paths, with words, that
